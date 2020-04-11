@@ -835,9 +835,6 @@ $('head').append(`
     border-color: #00b6b1;
     color: #fff;
 }
-#entryCategoryarduino {
-    display: none;
-}
 </style>
 `)
 
