@@ -747,52 +747,6 @@ addBlock('change_var', '%1 값을 %2 으로 변경%3', {
 });
 ////////////////////
 
-////////////////////
-addBlock('post_commu', '%1 제목과 %2 내용의 글을 엔커뮤에 올리기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
-}, {
-    params: [
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Block',
-            accept: 'string'
-        },
-        {
-            type: 'Indicator',
-            img: 'block_icon/hardware_icon.svg',
-            size: 11,
-        }
-    ],
-    def: [
-        {
-            type: 'text',
-            params: [`엔트리봇`]
-        },
-        {
-            type: 'text',
-            params: [`사랑스러워`]
-        },
-        null
-    ],
-    map: {
-        TITLE: 0,
-        CONTENT: 1
-    }
-}, 'text', (sprite, script) => {
-    fetch('https://playentry.org/api/discuss/', {
-        method: 'POST',
-        body: `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    return script.callReturn()
-})
-////////////////////
 
 
 // 블록 추가 끝
@@ -806,7 +760,6 @@ Entry.staticBlocks.push({
         'array_length',
         'json_key',
         'json_length',
-        'post_commu',
         'get_browser',
         'toast',
         'console',
