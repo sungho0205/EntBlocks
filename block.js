@@ -748,7 +748,7 @@ addBlock('change_var', '%1 값을 %2 으로 변경%3', {
 ////////////////////
 
 ////////////////////
-addBlock('likeList', '이 작품 좋아요 목록 (JSON)%3', {
+addBlock('likeList', '이 작품 좋아요 목록%3', {
     color: EntryStatic.colorSet.block.default.HARDWARE,
     outerLine: EntryStatic.colorSet.block.darken.HARDWARE
 }, {
