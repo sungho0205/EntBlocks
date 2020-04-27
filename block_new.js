@@ -359,6 +359,8 @@ const LibraryCreator = {
         $('head').append(`<style>#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware.svg);background-repeat:no-repeat;margin-bottom:1px}.entrySelectedCategory#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware_on.svg);background-color:#00b6b1;border-color:#00b6b1;color:#fff}</style>`)
         // 카테고리 이름 적용
         $(`#entryCategory${category}`).append(text)
+        console.log('%cEntBlocks 2.0 Made by thoratica.','background-color: #007bff; color: #e9ecef; padding: .7rem; font-family: sans-serif; font-size: .9rem; border-radius: 99999rem;',)
+        console.log('%cEntBlocks 2.0 follows the GNU General Public License version 3.0\nEntBlocks 2.0은 GNU General Public License version 3.0를 따릅니다.', 'font-family: sans-serif; font-size: .7rem')
     }
 }
 const blocks = [
