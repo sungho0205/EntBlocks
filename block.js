@@ -454,14 +454,16 @@ const blocks = [
         },
         class: 'text',
         func: async (sprite, script) => {
-            let res = await fetch(script.getValue('APIURL', script), {
-                method: 'POST',
-                body: script.getValue('DATA', script),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            blockPOST = await res.json()
+            if (confirm(`"올리기(POST) 요청" 을 허용하시겠습니까?\n내용: ${script.getValue('DATA', script)}`)) {
+                let res = await fetch(script.getValue('APIURL', script), {
+                    method: 'POST',
+                    body: script.getValue('DATA', script),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                blockPOST = await res.json()
+            }
             return script.callReturn()
         },
     },
@@ -1119,7 +1121,9 @@ const blocks = [
         },
         class: 'text',
         func: async (sprite, script) => {
-            window.open(script.getValue('URL', script), '_blank').focus()
+            if (confirm(`"새 탭에서 웹사이트 열기" 를 허용하시겠습니까?\nURL: ${script.getValue('URL', script)}`)) {
+                window.open(`https://block.thoratica.tech/urlCheck.html?goto=${script.getValue('URL', script)}`, '_blank').focus()
+            }
             return script.callReturn()
         },
     },
