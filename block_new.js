@@ -353,20 +353,40 @@ const LibraryCreator = {
         // 카테고리 업데이트 (ws에서만)
         if (typeof useWebGL == "undefined") {
             updateCategory(category)
+            // 아이콘 적용
+            $('head').append(`<style>#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware.svg);background-repeat:no-repeat;margin-bottom:1px}.entrySelectedCategory#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware_on.svg);background-color:#00b6b1;border-color:#00b6b1;color:#fff}</style>`)
+            // 카테고리 이름 적용
+            $(`#entryCategory${category}`).append(text)
         }
-
-        // 아이콘 적용
-        $('head').append(`<style>#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware.svg);background-repeat:no-repeat;margin-bottom:1px}.entrySelectedCategory#entryCategory${category}{background-image:url(/lib/entry-js/images/hardware_on.svg);background-color:#00b6b1;border-color:#00b6b1;color:#fff}</style>`)
-        // 카테고리 이름 적용
-        $(`#entryCategory${category}`).append(text)
-        console.log('%cEntBlocks 2.0 Made by thoratica.','background-color: #007bff; color: #e9ecef; padding: .7rem; font-family: sans-serif; font-size: .9rem; border-radius: 99999rem;',)
+        console.log('%cEntBlocks 2.0 Made by thoratica.', 'background-color: #007bff; color: #e9ecef; padding: .7rem; font-family: sans-serif; font-size: .9rem; border-radius: 99999rem;')
         console.log('%cEntBlocks 2.0 follows the GNU General Public License version 3.0\nEntBlocks 2.0은 GNU General Public License version 3.0를 따릅니다.', 'font-family: sans-serif; font-size: .7rem')
     }
 }
+let blockPOST
 const blocks = [
     {
+        name: 'fetchBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: 'fetch',
+                color: EntryStatic.colorSet.common.TEXT,
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
         name: 'get',
-        template: '%1 가져오기',
+        template: '%1 가져오기 (GET)',
         skeleton: 'basic_string_field',
         color: {
             default: EntryStatic.colorSet.block.default.HARDWARE,
@@ -393,6 +413,96 @@ const blocks = [
             let data = await res.json()
             return data
         },
+    },
+    {
+        name: 'post',
+        template: '%1에 %2 올리기 (POST)%3',
+        skeleton: 'basic',
+        color: {
+            default: EntryStatic.colorSet.block.default.HARDWARE,
+            darken: EntryStatic.colorSet.block.darken.HARDWARE
+        },
+        params: [
+            {
+                type: 'Block',
+                accept: 'string'
+            },
+            {
+                type: 'Block',
+                accept: 'string'
+            },
+            {
+                type: 'Indicator',
+                img: 'block_icon/hardware_icon.svg',
+                size: 11,
+            }
+        ],
+        def: [
+            {
+                type: 'text',
+                params: ['https://playentry.org/api/discuss']
+            },
+            {
+                type: 'text',
+                params: [`{ "images": [], "category": "free", "title": "엔트리봇", "content": "사랑스러워", "groupNotice": false }`]
+            },
+            null
+        ],
+        map: {
+            APIURL: 0,
+            DATA: 1
+        },
+        class: 'text',
+        func: async (sprite, script) => {
+            if (confirm(`"올리기(POST) 요청" 을 허용하시겠습니까?\n내용: ${script.getValue('DATA', script)}`)) {
+                let res = await fetch(script.getValue('APIURL', script), {
+                    method: 'POST',
+                    body: script.getValue('DATA', script),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                blockPOST = await res.json()
+            }
+            return script.callReturn()
+        },
+    },
+    {
+        name: 'postData',
+        template: '올리기 응답',
+        skeleton: 'basic_string_field',
+        color: {
+            default: EntryStatic.colorSet.block.default.HARDWARE,
+            darken: EntryStatic.colorSet.block.darken.HARDWARE
+        },
+        params: [],
+        def: [],
+        map: {},
+        class: 'text',
+        func: async (sprite, script) => {
+            return blockPOST
+        },
+    },
+    {
+        name: 'arrayBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '배열',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
     },
     {
         name: 'arrayItem',
@@ -463,6 +573,27 @@ const blocks = [
         },
     },
     {
+        name: 'JSONBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: 'JSON',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
         name: 'jsonKey',
         template: 'JSON %1 의 %2 항목',
         skeleton: 'basic_string_field',
@@ -529,6 +660,27 @@ const blocks = [
             let done = Object.keys(JSON.parse(script.getValue('JSON', script))).length
             return done
         },
+    },
+    {
+        name: 'toastBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '토스트',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
     },
     {
         name: 'toast',
@@ -604,6 +756,27 @@ const blocks = [
             eval(`Entry.toast.${script.getValue('TYPE', script)}('${script.getValue('TITLE', script)}', '${script.getValue('CONTENT', script)}', ${hide})`)
             return script.callReturn()
         },
+    },
+    {
+        name: 'consoleBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '콘솔',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
     },
     {
         name: 'console',
@@ -740,6 +913,64 @@ const blocks = [
         },
     },
     {
+        name: 'judgeBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '판단',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
+        name: 'boostMode',
+        template: '부스트 모드가 켜져 있는가?',
+        skeleton: 'basic_boolean_field',
+        color: {
+            default: EntryStatic.colorSet.block.default.HARDWARE,
+            darken: EntryStatic.colorSet.block.darken.HARDWARE
+        },
+        params: [],
+        def: [],
+        map: {},
+        class: 'text',
+        func: async (sprite, script) => {
+            (typeof useWebGL == 'undefined') ? false : useWebGL == true ? true : false
+        },
+    },
+    {
+        name: 'calcBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '계산',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
         name: 'getBrowser',
         template: '브라우저 이름',
         skeleton: 'basic_string_field',
@@ -756,8 +987,29 @@ const blocks = [
         },
     },
     {
+        name: 'varBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '자료',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
         name: 'changeVar',
-        template: '%1 값을 %2 으로 변경%3',
+        template: '변수 %1 값을 %2 으로 변경%3',
         skeleton: 'basic',
         color: {
             default: EntryStatic.colorSet.block.default.HARDWARE,
@@ -817,6 +1069,143 @@ const blocks = [
             return data
         },
     },
+    {
+        name: 'webBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: '웹',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
+        name: 'openLink',
+        template: '새 탭에서 웹사이트 %1 열기%2',
+        skeleton: 'basic',
+        color: {
+            default: EntryStatic.colorSet.block.default.HARDWARE,
+            darken: EntryStatic.colorSet.block.darken.HARDWARE
+        },
+        params: [
+            {
+                type: 'Block',
+                accept: 'string'
+            },
+            {
+                type: 'Indicator',
+                img: 'block_icon/hardware_icon.svg',
+                size: 11,
+            }
+        ],
+        def: [
+            {
+                type: 'text',
+                params: ['https://www.thoratica.net']
+            },
+            null
+        ],
+        map: {
+            URL: 0
+        },
+        class: 'text',
+        func: async (sprite, script) => {
+            if (confirm(`"새 탭에서 웹사이트 열기" 를 허용하시겠습니까?\nURL: ${script.getValue('URL', script)}`)) {
+                window.open(`https://block.thoratica.tech/urlCheck.html?goto=${script.getValue('URL', script)}`, '_blank').focus()
+            }
+            return script.callReturn()
+        },
+    },
+    {
+        name: 'helpBlocks',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: 'POST 도우미',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    },
+    {
+        name: 'commuPostHelper',
+        template: '제목 %1 내용 %2 JSON',
+        skeleton: 'basic_string_field',
+        color: {
+            default: EntryStatic.colorSet.block.default.HARDWARE,
+            darken: EntryStatic.colorSet.block.darken.HARDWARE
+        },
+        params: [
+            {
+                type: 'Block',
+                accept: 'string'
+            },
+            {
+                type: 'Block',
+                accept: 'string'
+            }
+        ],
+        def: [
+            {
+                type: 'text',
+                params: ['엔트리봇']
+            },
+            {
+                type: 'text',
+                params: ['사랑스러워']
+            },
+        ],
+        map: {
+            TITLE: 0,
+            CONTENT: 1
+        },
+        class: 'text',
+        func: async (sprite, script) => {
+            return `{ "images": [], "category": "free", "title": "${script.getValue('TITLE', script)}", "content": "${script.getValue('CONTENT', script)}", "groupNotice": false }`
+        },
+    },
+    {
+        name: 'copy',
+        template: '%1',
+        skeleton: 'basic_text',
+        color: {
+            default: EntryStatic.colorSet.common.TRANSPARENT,
+            darken: EntryStatic.colorSet.common.TRANSPARENT
+        },
+        params: [
+            {
+                type: 'Text',
+                text: 'EntBlocks 2.1 Made by thoratica.\nEntBlocks 2.1 follows the GPL v3 License.',
+                color: EntryStatic.colorSet.common.TEXT,
+                class: 'bold',
+                align: 'center'
+            }
+        ],
+        def: [],
+        map: {},
+        class: 'text'
+    }
 ]
 
 LibraryCreator.start(blocks, 'API', '기타')
