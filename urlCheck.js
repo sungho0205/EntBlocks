@@ -1,10 +1,4 @@
-const getParameterByName = (name) => {
-    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-    let regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
-        results = regex.exec(location.search);
-    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-}
-let goto = getParameterByName('goto')
+let goto = window.location.href.split('?goto=')[1]
 let o = goto
 
 
@@ -23,5 +17,5 @@ if (goto.includes('https://')) {
 if (blockedList.includes(goto)) {
     block()
 } else {
-    window.location.href = goto
+    window.location.href = o
 }
