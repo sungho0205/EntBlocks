@@ -5,12 +5,7 @@ const getParameterByName = (name) => {
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
 let goto = getParameterByName('goto')
-let o
-if (goto.startsWith('http://')||goto.startsWith('https://')) {
-    o = goto
-} else {
-    o = `http://${goto}`
-}
+let o = goto
 
 
 const block = () => {
@@ -28,5 +23,5 @@ if (goto.includes('https://')) {
 if (blockedList.includes(goto)) {
     block()
 } else {
-    window.location.href = `http://${goto}`
+    window.location.href = goto
 }
