@@ -6,7 +6,7 @@ const block = () => {
     document.getElementById('block').style.display = 'flex'
     document.getElementById('go').href = o
 }
-let blockedList = ['www.thoratica.net']
+let blockedList = ['']
 
 if (goto.includes('https://')) {
     goto = goto.replace('https://', '')
