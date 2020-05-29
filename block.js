@@ -358,7 +358,7 @@ const LibraryCreator = {
       // 카테고리 이름 적용
       $(`#entryCategory${category}`).append(text)
     }
-    console.log('%cEntBlocks v2.2%c\n\nEntBlocks는 MIT License를 따릅니다.\n%c\n체인지로그:\n%chttps://entblocks.blokode.xyz', 'background-color: #007bff; color: #e9ecef; padding: 0 3rem; border-radius: 1.2rem 0; font-family: sans-serif; font-size: 2.5rem;', 'font-family: sans-serif; font-size: 1.2rem;', 'font-family: sans-serif; font-size: 1.2rem;', 'font-family: sans-serif; font-size: 1.1rem; color: #007bff;')
+    console.log('%cEntBlocks v2.2%c\n\nEntBlocks는 MIT License를 따릅니다.\n%c\n공식 블로그:\n%chttps://entblocks.tistory.com', 'background-color: #007bff; color: #e9ecef; padding: 0 3rem; border-radius: 1.2rem 0; font-family: sans-serif; font-size: 2.5rem;', 'font-family: sans-serif; font-size: 1.2rem;', 'font-family: sans-serif; font-size: 1.2rem;', 'font-family: sans-serif; font-size: 1.1rem; color: #007bff;')
   }
 }
 let blockPOST
