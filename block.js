@@ -833,7 +833,7 @@ const blocks = [
     func: async (sprite, script) => {
       let theme
       if (script.getValue('THEME', script) == 'default') {
-        theme = '.Confirm-cssmodule-cancelButton-2bdHa{display: none !important;}'
+        theme = '<style>.Confirm-cssmodule-cancelButton-2bdHa{display: none !important;}</style>'
       } else if (script.getValue('THEME', script) == 'round') {
         theme = '<style>.Confirm-cssmodule-button-31i1a:not(.Confirm-cssmodule-cancelButton-2bdHa){background-color: #5096f5 !important;border-radius: 9999px !important;border: 0 !important;-webkit-box-shadow: 10px 10px 120px -18px rgba(80,150,245,0.54);-moz-box-shadow: 10px 10px 120px -18px rgba(80,150,245,0.54);box-shadow: 10px 10px 120px -18px rgba(80,150,245,0.54);}.Confirm-cssmodule-cancelButton-2bdHa{display: none !important;}.Confirm-cssmodule-confirm-FbkMi{border-radius: 2rem !important;background-size: 10rem;background-repeat: no-repeat;background-position: bottom left;background-color: white;}.Confirm-cssmodule-title-35Vpd{border-radius: 2rem 2rem 0 0 !important;background-color: #5096f5 !important;}.ModalView-cssmodule-modalView-25KwR .undefined{border-radius: 2rem !important;}.button.entryLmsClose{display: none !important;}.Confirm-cssmodule-confirm-FbkMi{min-height: 0 !important;}</style>'
       } else if (script.getValue('THEME', script) == 'sans') {
