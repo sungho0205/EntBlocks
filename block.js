@@ -432,7 +432,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -721,7 +721,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -808,7 +808,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -897,7 +897,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -930,7 +930,7 @@ const blocks = [
     params: [
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -959,7 +959,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -990,7 +990,7 @@ const blocks = [
     params: [
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -1174,7 +1174,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
@@ -1253,7 +1253,7 @@ const blocks = [
       },
       {
         type: 'Indicator',
-        img: 'block_icon/hardware_icon.svg',
+        img: '',
         size: 11,
       }
     ],
