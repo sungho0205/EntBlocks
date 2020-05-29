@@ -1344,7 +1344,7 @@ const blocks = [
     params: [
       {
         type: 'Text',
-        text: 'EntBlocks 2.1 Made by thoratica.\nEntBlocks 2.1 follows the GPL v3 License.',
+        text: 'EntBlocks v2.2',
         color: EntryStatic.colorSet.common.TEXT,
         class: 'bold',
         align: 'center'
