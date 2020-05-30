@@ -1270,7 +1270,7 @@ const blocks = [
     class: 'text',
     func: async (sprite, script) => {
       if (confirm(`"새 탭에서 웹사이트 열기" 를 허용하시겠습니까?\nURL: ${script.getValue('URL', script)}`)) {
-        window.open(`https://block.thoratica.tech/urlCheck.html?goto=${script.getValue('URL', script)}`, '_blank').focus()
+        window.open(`https://block.blokode.xyz/urlCheck.html?goto=${script.getValue('URL', script)}`, '_blank').focus()
       }
       return script.callReturn()
     },
