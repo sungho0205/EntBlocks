@@ -1,3 +1,38 @@
+const blocks = [
+  {
+    name: 'alert',
+    template: '브라우저가 %1 라고 말하기',
+    skeleton: 'basic',
+    color: {
+      default: '#007bff',
+      darken: '#c70000'
+    },
+    params: [
+      {
+        type: 'Block',
+        accept: 'string'
+      },
+      {
+        type: 'Indicator',
+        img: '',
+        size: 11,
+      }
+    ],
+    def: [
+      {
+        type: 'text',
+        params: [`하이`]
+      },
+      null
+    ],
+    map: {
+      CONTENT: 0
+    },
+    class: 'text',
+    func: async (sprite, script) => {
+      alert(CONTENT)
+    }
+  }
 const LibraryCreator = {
   start: (blocksJSON, category, text) => {
     let blockArray = new Array
@@ -362,41 +397,7 @@ const LibraryCreator = {
   }
 }
 let blockPOST
-const blocks = [
-  {
-    name: 'alert',
-    template: '브라우저가 %1 라고 말하기',
-    skeleton: 'basic',
-    color: {
-      default: '#007bff',
-      darken: '#c70000'
-    },
-    params: [
-      {
-        type: 'Block',
-        accept: 'string'
-      },
-      {
-        type: 'Indicator',
-        img: '',
-        size: 11,
-      }
-    ],
-    def: [
-      {
-        type: 'text',
-        params: [`하이`]
-      },
-      null
-    ],
-    map: {
-      CONTENT: 0
-    },
-    class: 'text',
-    func: async (sprite, script) => {
-      alert(CONTENT)
-    }
-  }
+
 
 LibraryCreator.start(blocks, 'API', '기타')
 alert("엔틜블록 로딩이 완료되었습니다.")
