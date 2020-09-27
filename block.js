@@ -29,7 +29,8 @@ const blocks = [
       skeleton: "basic",
       color: {
         default: savecolor
-      },
+      }
+    },
       params: [
         {
           type: "Block",
