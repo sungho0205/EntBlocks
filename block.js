@@ -1,4 +1,4 @@
-//Entrlblocks는 Entsave를 참고해서 만들었습니다.
+//Entrlblocks는 Entsave, 특수블록를 참고해서 만들었습니다.
 const savecolor = '#FC1402';
 const getcolor = '#0D0D0D';
 
