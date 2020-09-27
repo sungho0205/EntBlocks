@@ -30,8 +30,8 @@ const blocks = [
       color: {
         default: savecolor
       }
-    },
-      params: [
+     },
+      params = [
         {
           type: "Block",
           accept: "string",
