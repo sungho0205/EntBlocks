@@ -45,6 +45,7 @@ const blocks = [
             type: "text",
             params: [`엔틜`]
       ],
+      null
       map: {
         VALUE:0
       },
