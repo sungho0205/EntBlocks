@@ -352,8 +352,8 @@ console.log('Thank you for kang87y & thoratica');
 console.log('Made by sungho0205');
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('stop_project', '작품 정지시키기', {
-    color: EntryStatic.colorSet.block.default.START,
-    outerline: EntryStatic.colorSet.block.darken.START
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [{
             fontSize: 11,
@@ -378,8 +378,8 @@ addBlock('stop_project', '작품 정지시키기', {
      })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('stop_project2', '전체화면으로 만들기%2', {
-    color: EntryStatic.colorSet.block.default.START,
-    outerline: EntryStatic.colorSet.block.darken.START
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [
         {
@@ -401,8 +401,8 @@ addBlock('stop_project2', '전체화면으로 만들기%2', {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('stop_project3', '페이지 새로고침하기%2', {
-    color: EntryStatic.colorSet.block.default.START,
-    outerline: EntryStatic.colorSet.block.darken.START
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [
         {
@@ -425,8 +425,8 @@ addBlock('stop_project3', '페이지 새로고침하기%2', {
 
 
 addBlock('computer', '컴퓨터의 %1', {
-    color: EntryStatic.colorSet.block.default.CALC,
-    outerline: EntryStatic.colorSet.block.darken.CALC
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [
         {
@@ -476,8 +476,8 @@ addBlock('computer', '컴퓨터의 %1', {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('day', '오늘 요일', {
-    color: EntryStatic.colorSet.block.default.CALC,
-    outerline: EntryStatic.colorSet.block.darken.CALC,
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [],
     def: [],
@@ -493,8 +493,8 @@ addBlock('day', '오늘 요일', {
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('boost_mode', '부스트모드가 켜져있는가?  ', {
-    color: '#6E5AE5',
-    outerline: '#6666CC',
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [
     ],
@@ -512,8 +512,8 @@ addBlock('boost_mode', '부스트모드가 켜져있는가?  ', {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('box', '%1제목의 %2 띄우기   ', {
-    color: '#B0C4DE',
-    outerline: '#778899',
+    color: '#FC0000',
+    outerline: '#FC0000'
 }, {
     params: [
         {
