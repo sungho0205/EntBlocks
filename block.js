@@ -398,6 +398,6 @@ const LibraryCreator = {
 }
 let blockPOST
 
-
-LibraryCreator.start(blocks, 'API', '기타')
 alert("엔틜블록 로딩이 완료되었습니다.")
+LibraryCreator.start(blocks, 'API', '엔틜')
+
