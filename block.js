@@ -548,7 +548,7 @@ const LibraryCreator = {
 }
 let blockPOST
 if(confirm('엔틜블록 사용에 동의하십니까?')){
-    LibraryCreator.start(blocks, 'API', 'ES')
+    LibraryCreator.start(blocks, 'API', 'entrl')
     alert("Entrlblocks로딩이 완료되었습니다!:)")
     console.log('엔틜블록은 sungho0205가 만들었습니다.')
 }else{
