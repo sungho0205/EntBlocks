@@ -329,13 +329,7 @@ const updateCategory = (category, options) => {
 //	}
 //} else {
 //}
-function WinClose()
 
- {
-
-   window.open('','_self').close();     
-
-}
 const addBlock = (blockname, template, color, params, _class, func, skeleton = 'basic') => {
   Entry.block[blockname] = {
       color: color.color,
@@ -584,7 +578,15 @@ addBlock('stop_project3', '브라우저 탭 닫기%2', {
   def: [null],
   class: '작품'
 }, 'text', (sprite, script) => {
-  WinClose();
+  	   if(navigator.appVersion.indexOf("MSIE 6.0")>=0) { 
+
+	       parent.window.close(); 
+
+	   }else { 
+
+	       parent.window.open('about:blank','_self').close(); 	   
+
+	   } 
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -610,6 +612,7 @@ $('head').append(`
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   margin-bottom: 1px;
+
 }
 .entrySelectedCategory#entryCategoryAPI {
   background-color: #000000;
@@ -620,5 +623,5 @@ $('head').append(`
 `)
   $('#entryCategoryAPI').append('엔틜')
   alert("Entrlblocks로딩이 완료되었습니다! 🥳")
-  console.log("현재 엔틜블록 버전:"*{version})
+  console.log(`"현재 엔틜블록 버전:"*{version}`)
   console.log('엔틜블록은 sungho0205가 만들었고 특수블록의 일부 코드를 사용했음을 밝힙니다.')
