@@ -49,7 +49,7 @@ const blocks = [
       },
       class: "save",
       func: async(sprite, script) => {
-        alert(VALUE, script)
+        alert("VALUE", script)
       }
     },
     /*{
