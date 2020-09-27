@@ -50,9 +50,9 @@ const blocks = [
       ],
       null
       map: {
-        VALUE:0
+        VALUE:1
       },
-      class: "save",
+      class: "alert",
       func: async(sprite, script) => {
         const value = script.getValue('VALUE', script);
         alert(value);
