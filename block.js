@@ -49,7 +49,7 @@ const blocks = [
           }
       ],
       null
-      map: {
+      map = {
         VALUE:1
       },
       class: "alert",
