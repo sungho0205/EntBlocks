@@ -34,7 +34,6 @@ const blocks = [
         {
           type: "Block",
           accept: "string",
-          value: "하이"
         },
         {
           type: 'Indicator',
@@ -44,7 +43,7 @@ const blocks = [
       ],
       def: [
             type: "text",
-            params: [`엔트리`]
+            params: [`엔틜`]
       ],
       map: {
         VALUE: 0
