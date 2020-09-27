@@ -24,27 +24,6 @@ const blocks = [
         class: 'text'
     },
     {
-        name: 'savetext',
-        template: '%1',
-        skeleton: 'basic_text',
-        color: {
-            default: EntryStatic.colorSet.common.TRANSPARENT,
-            darken: EntryStatic.colorSet.common.TRANSPARENT
-        },
-        params: [
-            {
-                type: 'Text',
-                text: '저장하기',
-                color: EntryStatic.colorSet.common.TEXT,
-                class: 'bold',
-                align: 'center'
-            }
-        ],
-        def: [],
-        map: {},
-        class: 'save'
-    },
-    {
       name: 'alert',
       template: "%1 라고 경고창 띄우기",
       skeleton: "basic",
