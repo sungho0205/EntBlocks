@@ -11,7 +11,7 @@ const blocks = [
             default: EntryStatic.colorSet.common.TRANSPARENT,
             darken: EntryStatic.colorSet.common.TRANSPARENT
         },
-        params: [
+        params:[
             {
                 type: 'Text',
                 text: '엔트리에서 할수없는 것들, 이제 엔틜블록으로.',
