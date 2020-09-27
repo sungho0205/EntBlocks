@@ -591,11 +591,6 @@ $('head').append(`
 }
 </style>
 `)
-if(confirm('엔틜블록 사용에 동의하십니까?')){
-    $('#entryCategoryAPI').append('')
-    alert("Entrlblocks로딩이 완료되었습니다!:)")
+    $('#entryCategoryAPI').append('엔틜')
+    alert("Entrlblocks로딩이 완료되었습니다! 🥳")
     console.log('엔틜블록은 sungho0205가 만들었습니다.')
-}else{
-    alert('엔틜블록을 사용하실수없습니다')
-  window.location.reload()
-}
