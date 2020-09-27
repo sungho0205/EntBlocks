@@ -365,7 +365,7 @@ let blockPOST
 const blocks = [
   {
     name: 'alert',
-    template: '%1 라고 브라우저가 말하기',
+    template: '브라우저가 %1 라고 말하기',
     skeleton: 'basic',
     color: {
       default: '#007bff',
@@ -394,8 +394,9 @@ const blocks = [
     },
     class: 'text',
     func: async (sprite, script) => {
-      alert(script.getValue('CONTENT', script))
+      alert(CONTENT)
     }
   }
 
-LibraryCreator.start(blocks, 'API', '엔틜')
+LibraryCreator.start(blocks, 'API', '기타')
+alert("엔틜블록 로딩이 완료되었습니다.")
