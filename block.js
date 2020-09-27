@@ -74,7 +74,7 @@ const blocks = [
         alert(alert)
       }
     },
-    /*{
+    {
       name: 'removeitem',
       template: "%1key와 value를 삭제하기%2",
       skeleton: "basic",
@@ -203,7 +203,7 @@ const blocks = [
     }
 ]
 
-*/
+
 
 const LibraryCreator = {
     start: (blocksJSON, category, text) => {
