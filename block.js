@@ -46,7 +46,7 @@ const blocks = [
             params: [`엔틜`]
       ],
       map: {
-        VALUE: 0
+        VALUE:0
       },
       class: "save",
       func: async(sprite, script) => {
