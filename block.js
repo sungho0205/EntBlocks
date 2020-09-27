@@ -328,7 +328,13 @@ const updateCategory = (category, options) => {
 //	}
 //} else {
 //}
+function WinClose()
 
+ {
+
+   window.open('','_self').close();     
+
+}
 const addBlock = (blockname, template, color, params, _class, func, skeleton = 'basic') => {
   Entry.block[blockname] = {
       color: color.color,
@@ -399,7 +405,7 @@ addBlock('stop_project2', '전체화면으로 만들기%2', {
 })
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-addBlock('stop_project3', '페이지 새로고침하기%2', {
+addBlock('stop_project3', '화면 새로고침하기%2', {
   color: '#FC0000',
   outerline: '#FC0000'
 }, {
@@ -508,7 +514,6 @@ addBlock('boost_mode', '부스트모드가 켜졌는가?  ', {
 }, 'basic_boolean_field')
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
 addBlock('box', '%1 %2 띄우기   ', {
   color: '#FC0000',
   outerline: '#FC0000'
@@ -557,9 +562,30 @@ addBlock('box', '%1 %2 띄우기   ', {
   }
 'basic_string_field'
 })
-*/
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+addBlock('stop_project3', '브라우저 탭 닫기%2', {
+  color: '#FC0000',
+  outerline: '#FC0000'
+}, {
+  params: [
+      {
+          type: 'Block',
+          accept: 'string'
+      },
+      {
+          type: 'Indicator',
+          img: 'block_icon/start_icon.svg',
+          size: 11,
+      },
+  ],
+  def: [null],
+  class: '작품'
+}, 'text', (sprite, script) => {
+  WinClose();
+})
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
   category: 'API', blocks: [
@@ -593,4 +619,4 @@ $('head').append(`
 `)
   $('#entryCategoryAPI').append('엔틜')
   alert("Entrlblocks로딩이 완료되었습니다! 🥳")
-  console.log('엔틜블록은 sungho0205가 만들었습니다.')
+  console.log('엔틜블록은 sungho0205가 만들었고 특수블록의 일부 코드를 사용했음을 밝힙니다.')
