@@ -1,3 +1,4 @@
+const version = 0.6
 Entry.staticBlocks = [
   {
       category: 'start',
@@ -619,4 +620,5 @@ $('head').append(`
 `)
   $('#entryCategoryAPI').append('엔틜')
   alert("Entrlblocks로딩이 완료되었습니다! 🥳")
+  console.log("현재 엔틜블록 버전:"*{version})
   console.log('엔틜블록은 sungho0205가 만들었고 특수블록의 일부 코드를 사용했음을 밝힙니다.')
