@@ -23,7 +23,7 @@ const blocks = [
         map: {},
         class: 'text'
     },
-    {
+    /*{
         name: 'savetext',
         template: '%1',
         skeleton: 'basic_text',
@@ -200,7 +200,7 @@ const blocks = [
       func: async(sprite, script) => {
         return Entry.projectId;
       }
-    }
+    }*/
 ]
 
 
