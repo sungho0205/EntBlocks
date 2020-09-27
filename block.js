@@ -42,7 +42,7 @@ const blocks = [
           size: 11,
         }
       ],
-      def: [
+      def = [
           {
             type: "text",
             params: [`엔틜`]
