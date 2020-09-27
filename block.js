@@ -375,8 +375,7 @@ addBlock('stop_project', '작품 정지시키기', {
     },
 }, 'text', (sprite, script) => {
          Entry.engine.toggleStop();
-     }
-})
+     })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('stop_project2', '전체화면으로 만들기%2', {
     color: EntryStatic.colorSet.block.default.START,
