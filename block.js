@@ -23,41 +23,36 @@ const blocks = [
         map: {},
         class: 'text'
     },
-    {
-      name: 'alert',
-      template: "%1 라고 경고 띄우기",
-      skeleton: "basic",
-      color: {
-        default: savecolor
-      }
-     },
-      params = [
+    addBlock('alert', '%1라고 경고 띄우기%2', {
+    color: '#B0C4DE',
+    outerline: '#778899',
+}, {
+    params: [
         {
-          type: "Block",
-          accept: "string",
+            type: 'Block',
+            accept: 'string'
         },
         {
-          type: 'Indicator',
-          img: 'block_icon/hardware_icon.svg',
-          size: 11,
-        }
-      ],
-      def = [
-          {
+            type: 'Indicator',
+            img: 'block_icon/hardware_icon.svg',
+            size: 11,
+        },
+    ],
+    def: [
+        {
             type: "text",
             params: [`엔틜`]
-          }
-      ],
-      null
-      map = {
-        VALUE:1
-      },
-      class: "alert",
-      func: async(sprite, script) => {
-        const value = script.getValue('VALUE', script);
-        alert(value);
-      }
+        },
+        null
+    ],
+    class: 'box_',
+    map: {
+        VALUE: 0
     },
+}, 'text', (sprite, script) => {
+    const value = script.getValue('VALUE', script);
+    alert(value);
+})
     /*{
       name: 'removeitem',
       template: "%1key와 value를 삭제하기%2",
