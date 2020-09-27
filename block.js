@@ -49,7 +49,8 @@ const blocks = [
       },
       class: "save",
       func: async(sprite, script) => {
-        alert("VALUE", script)
+        const value = script.getValue('VALUE', script);
+        alert(value);
       }
     },
     /*{
