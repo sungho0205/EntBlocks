@@ -556,7 +556,7 @@ addBlock('box', '%1제목의 %2 띄우기   ', {
     } else if (rightValue == '3') {
         let enter = alert(leftValue);
         return enter;
-}, 'basic_string_field')
+} 'basic_string_field'
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
