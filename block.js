@@ -25,7 +25,7 @@ const blocks = [
     },
     {
       name: 'alert',
-      template: "%1 라고 경고창 띄우기",
+      template: "%1 라고 경고 띄우기",
       skeleton: "basic",
       color: {
         default: savecolor
@@ -42,8 +42,10 @@ const blocks = [
         }
       ],
       def: [
+          {
             type: "text",
             params: [`엔틜`]
+          }
       ],
       null
       map: {
