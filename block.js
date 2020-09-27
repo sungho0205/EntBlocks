@@ -1,4 +1,4 @@
-//Entrlblocks는 Entsave, 특수블록를 참고해서 만들었습니다.
+//Entrlblocks는 Entsave, 특수블록을 참고해서 만들었습니다.
 const savecolor = '#FC1402';
 const getcolor = '#0D0D0D';
 
@@ -42,10 +42,12 @@ const blocks = [
           size: 11,
         }
       ],
-      def: [],
+      def: [
+            type: "text",
+            params: [`엔트리`]
+      ],
       map: {
-        KEY:0,
-        VALUE:1
+        VALUE: 0
       },
       class: "save",
       func: async(sprite, script) => {
