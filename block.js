@@ -603,7 +603,7 @@ addBlock('user_id', 'user._id값', {
 }, 'basic_string_field');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-addBlock('user_mypage', '%1 유저 마이페이지로 고고~   ', {
+addBlock('user_mypage', '%1 유저 마이페이지로 가기', {
   color: '#FC0000',
   outerline: '#FC0000'
 }, {
@@ -615,14 +615,9 @@ addBlock('user_mypage', '%1 유저 마이페이지로 고고~   ', {
               null,
   ],
   class: 'user_mypage',
-  map: {
-       user: 0,
-  },
 }, 'text', (sprite, script) => {
-  const userget = script.getValue('user', script);
-  
-      let enter = window.location.href = 'userget';
-      return enter;
+      const userget = script.getValue('user', script);
+      window.location.href = `https://playentry.org/${userget}`;
   }, 'basic_string_field');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -637,7 +632,6 @@ Entry.staticBlocks.push({
       'user_mypage',
       'computer',
       'user_id',
-
   ]
 });
 
