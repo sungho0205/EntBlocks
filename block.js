@@ -1,4 +1,4 @@
-const version = 0.7
+const version = 0.9
 Entry.staticBlocks = [
   {
       category: 'start',
@@ -615,14 +615,14 @@ params: [{
        Entry.engine.toggleStop();
    })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-addBlock('userid', 'user._id값', {
+addBlock('user_id', 'user._id값', {
   color: '#FC0000',
   outerline: '#FC0000'
 }, {
   params: [],
   def: [],
   map: {},
-  class: 'userid'
+  class: 'user_id'
 }, 'text', (sprite, script) => {
   return user._id;
 }, 'basic_string_field');
@@ -637,8 +637,8 @@ Entry.staticBlocks.push({
       'box',
       'boost_mode',
       'day',
-      'computer'
-      'userid'
+      'computer',
+      "user_id"
   ]
 });
 
