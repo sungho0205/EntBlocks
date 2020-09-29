@@ -638,6 +638,7 @@ Entry.staticBlocks.push({
       'boost_mode',
       'day',
       'computer'
+      'userid'
   ]
 });
 
