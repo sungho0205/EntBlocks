@@ -655,7 +655,7 @@ $('head').append(`
 .entrySelectedCategory#entryCategoryAPI {
   background-color: #FC0000;
   border-color: #778899;
-  color: #FC0000;
+  color: #fff;
 }
 </style>
 `)
