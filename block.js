@@ -603,7 +603,7 @@ addBlock('user_id', 'user._id값', {
 }, 'basic_string_field');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-addBlock('userMypage', '%1 유저 마이페이지로 고고~   ', {
+addBlock('user_mypage', '%1 유저 마이페이지로 고고~   ', {
   color: '#FC0000',
   outerline: '#FC0000'
 }, {
@@ -614,7 +614,7 @@ addBlock('userMypage', '%1 유저 마이페이지로 고고~   ', {
               },
               null,
   ],
-  class: 'userMypage',
+  class: 'user_mypage',
   map: {
        user: 0,
   },
@@ -634,9 +634,10 @@ Entry.staticBlocks.push({
       'box',
       'boost_mode',
       'day',
+      'user_mypage'
       'computer',
       'user_id',
-      'userMypage'
+
   ]
 });
 
