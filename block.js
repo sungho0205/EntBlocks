@@ -614,6 +614,7 @@ Entry.staticBlocks.push({
       'day',
       'user_mypage',
       'computer',
+      'user_id'
   ]
 });
 
