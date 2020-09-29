@@ -351,6 +351,7 @@ const addBlock = (blockname, template, color, params, _class, func, skeleton = '
 
 console.log('Thank you for kang87y & thoratica');
 console.log('Made by sungho0205');
+console.log(`현재 엔틜블록 버전:${version}`)
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('stop_project', '작품 정지시키기', {
   color: '#FC0000',
