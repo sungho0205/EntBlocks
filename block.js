@@ -634,7 +634,7 @@ Entry.staticBlocks.push({
       'box',
       'boost_mode',
       'day',
-      'user_mypage'
+      'user_mypage',
       'computer',
       'user_id',
 
