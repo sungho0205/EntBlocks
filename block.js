@@ -489,18 +489,16 @@ addBlock('day', '오늘 요일', {
   let dayName = week[today.getDay()];
   return dayName;
 }, 'basic_string_field');
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('boost_mode', '부스트모드가 켜졌는가?  ', {
   color: '#FC0000',
   outerline: '#FC0000'
 }, {
-  params: [
-  ],
+  params: [],
   def: [],
   map: {},
-  class: 'boost_mode_check'
+  class: 'boost_mode'
 }, 'text', (sprite, script) => {
   if (useWebGL == true) {
       return true;
@@ -508,7 +506,6 @@ addBlock('boost_mode', '부스트모드가 켜졌는가?  ', {
       return false;
   }
 }, 'basic_boolean_field')
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('box', '%1 %2 띄우기   ', {
   color: '#FC0000',
@@ -558,7 +555,6 @@ addBlock('box', '%1 %2 띄우기   ', {
   }
 'basic_string_field'
 })
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 addBlock('stop_project3', '현재 탭 닫기%2', {
@@ -579,14 +575,7 @@ addBlock('stop_project3', '현재 탭 닫기%2', {
   def: [null],
   class: '작품'
 }, 'text', (sprite, script) => {
-  	   if(navigator.appVersion.indexOf("MSIE 6.0")>=0) { 
-
 	       parent.window.close(); 
-
-	   }else { 
-
-	       parent.window.open('about:blank','_self').close(); 	   
-
 	   } 
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -601,7 +590,6 @@ addBlock('user_id', '자신의 user._id값', {
 }, 'text', (sprite, script) => {
   return user._id;
 }, 'basic_string_field');
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
@@ -612,7 +600,6 @@ Entry.staticBlocks.push({
       'box',
       'boost_mode',
       'day',
-      'user_mypage',
       'computer',
       'user_id'
   ]
