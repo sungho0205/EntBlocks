@@ -623,9 +623,7 @@ addBlock('box', '%1 유저 마이페이지로 고고~   ', {
   
       let enter = window.location.href = 'userget';
       return enter;
-  }
-'basic_string_field'
-})
+  }, 'basic_string_field');
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
@@ -663,4 +661,3 @@ $('head').append(`
   $('#entryCategoryAPI').append('엔틜')
   console.log("Entrlblocks로딩이 완료되었습니다! 🥳")
   alert("엔틜블록을 나쁘게 사용하는 경우 작품 링크를 moon@7959.ml로 보내주세요!")
-
