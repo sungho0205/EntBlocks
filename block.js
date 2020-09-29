@@ -589,6 +589,45 @@ addBlock('stop_project3', '현재 탭 닫기%2', {
 	   } 
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+addBlock('stop_project', 'get_user._i', {
+  color: '#FC0000',
+  outerline: '#FC0000'
+}, {
+params: [{
+          fontSize: 11,
+          value: '정지'
+      },
+      {
+          type: 'Indicator',
+          img: 'block_icon/start_icon.svg',
+          size: 11,
+      }
+  ],
+  def: [
+          null,
+          null
+  ],
+  class: '작품',
+  map: {
+      VALUE: 0
+  },
+}, 'text', (sprite, script) => {
+       Entry.engine.toggleStop();
+   })
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+addBlock('userid', 'user._id값', {
+  color: '#FC0000',
+  outerline: '#FC0000'
+}, {
+  params: [],
+  def: [],
+  map: {},
+  class: 'userid'
+}, 'text', (sprite, script) => {
+  return user._id;
+}, 'basic_string_field');
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
   category: 'API', blocks: [
