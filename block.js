@@ -589,32 +589,6 @@ addBlock('stop_project3', '현재 탭 닫기%2', {
 
 	   } 
 })
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-addBlock('stop_project', 'get_user._i', {
-  color: '#FC0000',
-  outerline: '#FC0000'
-}, {
-params: [{
-          fontSize: 11,
-          value: '정지'
-      },
-      {
-          type: 'Indicator',
-          img: 'block_icon/start_icon.svg',
-          size: 11,
-      }
-  ],
-  def: [
-          null,
-          null
-  ],
-  class: '작품',
-  map: {
-      VALUE: 0
-  },
-}, 'text', (sprite, script) => {
-       Entry.engine.toggleStop();
-   })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 addBlock('user_id', 'user._id값', {
   color: '#FC0000',
@@ -629,6 +603,30 @@ addBlock('user_id', 'user._id값', {
 }, 'basic_string_field');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+addBlock('box', '%1 유저 마이페이지로 고고~   ', {
+  color: '#FC0000',
+  outerline: '#FC0000'
+}, {
+  def: [
+              {
+                  type: 'text',
+                  params: [`01079187959`]
+              },
+              null,
+  ],
+  class: 'box_',
+  map: {
+       user: 0,
+  },
+}, 'text', (sprite, script) => {
+  const userget = script.getValue('user', script);
+  
+      let enter = window.location.href = 'userget';
+      return enter;
+  }
+'basic_string_field'
+})
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Entry.staticBlocks.push({
   category: 'API', blocks: [
