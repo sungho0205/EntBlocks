@@ -1,4 +1,4 @@
-const version = 0.9
+const version = 1.0
 Entry.staticBlocks = [
   {
       category: 'start',
