@@ -605,15 +605,15 @@ Entry.staticBlocks.push({
 });
 if(Entry.getMainWS() && Entry.projectId) {
         const gumyul_exportedProject = Entry.exportProject()
-        const projectData = await (await fetch(`https://playentry.org/api/project/${Entry.projectId}`)).json()
+        const projectData = await(await fetch(`https://playentry.org/api/project/${Entry.projectId}`)).json()
         Entry.clearProject()
         Entry.loadProject(Object.keys(gumyul_exportedProject).reduce((acc, cur) => {
             acc[cur] = projectData[cur]
             return acc
-        }, {}))
-}
+}, 
 
-updateCategory('API')
+
+updateCategory('API'),
 
 $('head').append(`
 <style>
@@ -630,7 +630,7 @@ $('head').append(`
   color: #fff;
 }
 </style>
-`)
-  $('#entryCategoryAPI').append('엔틜')
-  console.log("Entrlblocks로딩이 완료되었습니다! 🥳")
+`),
+  $('#entryCategoryAPI').append('엔틜'),
+  console.log("Entrlblocks로딩이 완료되었습니다! 🥳"),
   alert("엔틜블록을 나쁘게 사용하는 경우 작품 링크를 moon@7959.ml로 보내주세요!")
